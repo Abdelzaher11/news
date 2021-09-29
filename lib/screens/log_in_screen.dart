@@ -4,6 +4,7 @@ import 'package:news/constants/colors.dart';
 import 'package:news/constants/controllers.dart';
 import 'package:news/constants/variables/font_size.dart';
 import 'package:news/constants/variables/padding.dart';
+import 'package:news/screens/register_screen.dart';
 import 'package:news/widgets/background_container.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -16,7 +17,6 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: kBlackColor,
       body: BackgroundWidget(
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -104,13 +104,17 @@ class _LogInScreenState extends State<LogInScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          ///username section
                           ///username title
-                          Text(
-                            'Username',
-                            style: TextStyle(
-                              color: kGreenColor,
-                              fontSize: kFont16,
-                              fontWeight: FontWeight.bold,
+                          Padding(
+                            padding: EdgeInsets.only(left: kPadding15),
+                            child: Text(
+                              'Username',
+                              style: TextStyle(
+                                color: kGreenColor,
+                                fontSize: kFont16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 5.0,),
@@ -132,13 +136,17 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                           ),
                           const SizedBox(height: 15.0,),
+                          ///password section
                           ///password title
-                          Text(
-                            'Password',
-                            style: TextStyle(
-                              color: kGreenColor,
-                              fontSize: kFont16,
-                              fontWeight: FontWeight.bold,
+                          Padding(
+                            padding: EdgeInsets.only(left: kPadding15),
+                            child: Text(
+                              'Password',
+                              style: TextStyle(
+                                color: kGreenColor,
+                                fontSize: kFont16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 5.0,),
@@ -218,7 +226,11 @@ class _LogInScreenState extends State<LogInScreen> {
                       color: Colors.black,
                     ),
                     InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=>RegisterScreen(),
+                        ));
+                      },
                       child: Text(
                         'Sign up',
                         style: TextStyle(
